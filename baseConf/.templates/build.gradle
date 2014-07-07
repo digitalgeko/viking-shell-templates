@@ -1,3 +1,9 @@
+apply plugin: 'war'
+
+war {
+    archiveName = "${projectName}.war"
+}
+
 buildscript {
     repositories {
     	mavenCentral()
