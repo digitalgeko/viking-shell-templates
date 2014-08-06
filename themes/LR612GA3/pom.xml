@@ -28,7 +28,7 @@
 					<appServerDeployDir>\${liferay.app.server.deploy.dir}</appServerDeployDir>
 					<appServerLibGlobalDir>\${liferay.app.server.lib.global.dir}</appServerLibGlobalDir>
 					<appServerPortalDir>\${liferay.app.server.portal.dir}</appServerPortalDir>
-					<liferayVersion>${liferayVersion}</liferayVersion>
+					<liferayVersion>6.1.2</liferayVersion>
 					<parentTheme>\${liferay.theme.parent}</parentTheme>
 					<pluginType>theme</pluginType>
 					<themeType>\${liferay.theme.type}</themeType>

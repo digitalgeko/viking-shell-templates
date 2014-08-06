@@ -1,7 +1,12 @@
 apply plugin: 'war'
+apply plugin: 'viking'
 
 war {
     archiveName = "${projectName}.war"
+}
+
+project.ext {
+	liferayVersion = "6.2.0-RC5"
 }
 
 buildscript {
@@ -13,10 +18,6 @@ buildscript {
         classpath 'org.vikingportlets:viking-gradle-plugin:0.3.23'
     }
 }
-
-project.ext.set("liferayVersion", "6.2.0-RC5")
-
-apply plugin: 'viking'
 
 sourceCompatibility = '1.6'
 targetCompatibility = '1.6'
