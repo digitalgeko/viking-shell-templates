@@ -6,5 +6,4 @@ if exist "%CATALINA_HOME%/jre1.6.0_20/win" (
 	set "JRE_HOME=%CATALINA_HOME%/jre1.6.0_20/win"
 )
 
-set "CATALINA_HOME=${tomcatPath}"
 set "CATALINA_OPTS=%CATALINA_OPTS% -Dfile.encoding=UTF8 -Djava.net.preferIPv4Stack=true  -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx2048m -XX:MaxPermSize=768m"
