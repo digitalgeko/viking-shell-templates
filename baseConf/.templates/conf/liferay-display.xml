@@ -4,7 +4,7 @@
 <display>
 	<% 
 		portletByCategory =  portlets.groupBy { portlet ->
-			portletName = portlet - 'viking' + File.separator +'controllers' + File.separator - 'Portlet.groovy'
+			portletName = portlet - ('viking' + File.separator +'controllers' + File.separator) - 'Portlet.groovy'
 			conf[portletName]?.display?.category?:projectName
 		}
 	%>
@@ -15,15 +15,15 @@
 		<% if (category) { %>
 				<category name="${category}">
 			        <% categoryPortlets.each { portlet ->
-			        dashedName = portlet.replaceAll(/(\B[A-Z])/, '-$1').toLowerCase() - 'viking' + File.separator +'controllers' + File.separator - '.groovy'
+			        dashedName = portlet.replaceAll(/(\B[A-Z])/, '-$1').toLowerCase() - ('viking' + File.separator +'controllers' + File.separator) - '.groovy'
 			        %>
 			        <portlet id="${dashedName}" />
 			        <% } %>
 			    </category>    		
 		<% } else { %>
 				<% categoryPortlets.each { portlet ->
-					portletName = portlet - 'viking' + File.separator +'controllers' + File.separator - 'Portlet.groovy'
-				    dashedName = portlet.replaceAll(/(\B[A-Z])/, '-$1').toLowerCase() - 'viking' + File.separator +'controllers' + File.separator - '.groovy'
+					portletName = portlet - ('viking' + File.separator +'controllers' + File.separator) - 'Portlet.groovy'
+				    dashedName = portlet.replaceAll(/(\B[A-Z])/, '-$1').toLowerCase() - ('viking' + File.separator +'controllers' + File.separator) - '.groovy'
 				%>
 					<category name="${portletName}">
 				        <portlet id="${dashedName}" />
