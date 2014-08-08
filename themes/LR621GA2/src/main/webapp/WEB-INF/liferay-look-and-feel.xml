@@ -10,7 +10,7 @@
         <company-includes />
         <company-excludes />
     </company-limit>
-     <theme id="spottkick-theme" name="Spottkick">
+     <theme id="${projectName}-theme" name="${projectName}">
          <template-extension>ftl</template-extension>
          <settings>
              <setting configurable="true" key="show-navigation" value="true" type="checkbox"/>

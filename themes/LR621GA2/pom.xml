@@ -27,7 +27,7 @@
 					<appServerDeployDir>\${liferay.app.server.deploy.dir}</appServerDeployDir>
 					<appServerLibGlobalDir>\${liferay.app.server.lib.global.dir}</appServerLibGlobalDir>
 					<appServerPortalDir>\${liferay.app.server.portal.dir}</appServerPortalDir>
-					<liferayVersion>6.2.0-RC5</liferayVersion>
+					<liferayVersion>\${liferay.version}</liferayVersion>
 					<parentTheme>\${liferay.theme.parent}</parentTheme>
 					<pluginType>theme</pluginType>
 					<themeType>\${liferay.theme.type}</themeType>
@@ -89,5 +89,6 @@
 	<properties>
 		<liferay.theme.parent>classic</liferay.theme.parent>
 		<liferay.theme.type>fmt</liferay.theme.type>
+		<liferay.version>6.2.0-RC5</liferay.version>
 	</properties>
 </project>
