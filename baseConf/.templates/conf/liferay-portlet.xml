@@ -21,13 +21,12 @@
             <% } %>
             <instanceable>${portletConf.instanceable?:false}</instanceable>
             <header-portlet-css>/css/main.css</header-portlet-css>
-            <header-portlet-css>/css/ui-lightness/jquery-ui-1.10.2.custom.css</header-portlet-css>
-            <header-portlet-css>/css/jqtree.css</header-portlet-css>
-            <header-portlet-css>/css/contextMenu/jquery.contextMenu.css</header-portlet-css>
+            
+            <footer-portlet-javascript>/js/angular/angular.min.js</footer-portlet-javascript>
+            <footer-portlet-javascript>/js/angular/init.js</footer-portlet-javascript>
 
-            <header-portlet-javascript>/js/jquery-1.10.2.min.js</header-portlet-javascript>
             <% javascripts.each { javascript -> %>
-                <header-portlet-javascript>/js/${javascript}</header-portlet-javascript>
+                <footer-portlet-javascript>/js/${javascript}</footer-portlet-javascript>
             <% } %>
         </portlet>
     <% } %>
