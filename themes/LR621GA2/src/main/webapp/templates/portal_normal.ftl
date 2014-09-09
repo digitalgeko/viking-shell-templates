@@ -2,19 +2,19 @@
 
 <#include init />
 
-<html class="${root_css_class}" dir="<@liferay.language key="lang.dir" />" lang="${w3c_language_id}">
+<html class="\${root_css_class}" dir="<@liferay.language key="lang.dir" />" lang="\${w3c_language_id}">
 
 <head>
-	<title>${the_title} - ${company_name}</title>
+	<title>\${the_title} - \${company_name}</title>
 
     <meta content="initial-scale=1.0, width=device-width" name="viewport" />
-	${theme.include(top_head_include)}
+	\${theme.include(top_head_include)}
 
 </head>
 
-<body class="${css_class}">
+<body class="\${css_class}">
 
-${theme.include(body_top_include)}
+\${theme.include(body_top_include)}
 
 <#if is_signed_in>
 	<@liferay.dockbar />
@@ -23,11 +23,11 @@ ${theme.include(body_top_include)}
 	<div class="container" id="wrapper">
 		<div class="viking">
 			<h1>
-				<a class="${logo_css_class}" href="${site_default_url}" title="<@liferay.language key="go-to" /> ${site_name}">
-					<img alt="${logo_description}" height="${site_logo_height}" src="${site_logo}" style="height:60px;" />
+				<a class="\${logo_css_class}" href="\${site_default_url}" title="<@liferay.language key="go-to" /> \${site_name}">
+					<img alt="\${logo_description}" height="\${site_logo_height}" src="\${site_logo}" style="height:60px;" />
 				</a>
-				<span class="site-name" title="<@liferay.language key="go-to" /> ${site_name}">
-					${site_name} - Viking Framework
+				<span class="site-name" title="<@liferay.language key="go-to" /> \${site_name}">
+					\${site_name} - Viking Framework
 				</span>
 			</h1>
 
@@ -35,25 +35,25 @@ ${theme.include(body_top_include)}
 			
 			<#if the_title?? && the_title!=''>
 				<h2 class="page-title">
-					<span>${the_title}</span>
+					<span>\${the_title}</span>
 				</h2>
 			</#if>
 		</div>		
 
         <#if theme.getSetting("show-navigation") = "true">
 		<#if has_navigation || is_signed_in>
-			<#include "${full_templates_path}/navigation.ftl" />
+			<#include "\${full_templates_path}/navigation.ftl" />
 		</#if>
         </#if>
 
 		<#if selectable>
-			${theme.include(content_include)}
+			\${theme.include(content_include)}
 		<#else>
-			${portletDisplay.recycle()}
+			\${portletDisplay.recycle()}
 
-			${portletDisplay.setTitle(the_title)}
+			\${portletDisplay.setTitle(the_title)}
 
-			${theme.wrapPortlet("portlet.ftl", content_include)}
+			\${theme.wrapPortlet("portlet.ftl", content_include)}
 		</#if>
 
 
@@ -65,9 +65,9 @@ ${theme.include(body_top_include)}
 	</footer>
 </div>
 
-${theme.include(body_bottom_include)}
+\${theme.include(body_bottom_include)}
 
-${theme.include(bottom_include)}
+\${theme.include(bottom_include)}
 
 <style>
 	/* 	Add additional stylesheets below 
