@@ -11,7 +11,7 @@
 			<plugin>
 				<groupId>com.liferay.maven.plugins</groupId>
 				<artifactId>liferay-maven-plugin</artifactId>
-				<version>${liferayVersion}</version>
+				<version>\${lfr.version}</version>
 				<executions>
 					<execution>
 						<phase>generate-sources</phase>
@@ -27,10 +27,10 @@
 					<appServerDeployDir>\${liferay.app.server.deploy.dir}</appServerDeployDir>
 					<appServerLibGlobalDir>\${liferay.app.server.lib.global.dir}</appServerLibGlobalDir>
 					<appServerPortalDir>\${liferay.app.server.portal.dir}</appServerPortalDir>
-					<liferayVersion>\${liferay.version}</liferayVersion>
-					<parentTheme>\${liferay.theme.parent}</parentTheme>
+					<liferayVersion>\${lfr.version}</liferayVersion>
+					<parentTheme>\${lfr.theme.parent}</parentTheme>
 					<pluginType>theme</pluginType>
-					<themeType>\${liferay.theme.type}</themeType>
+					<themeType>\${lfr.theme.type}</themeType>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -46,25 +46,25 @@
 		<dependency>
 			<groupId>com.liferay.portal</groupId>
 			<artifactId>portal-service</artifactId>
-			<version>${liferayVersion}</version>
+			<version>\${lfr.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.liferay.portal</groupId>
 			<artifactId>util-bridges</artifactId>
-			<version>${liferayVersion}</version>
+			<version>\${lfr.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.liferay.portal</groupId>
 			<artifactId>util-taglib</artifactId>
-			<version>${liferayVersion}</version>
+			<version>\${lfr.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.liferay.portal</groupId>
 			<artifactId>util-java</artifactId>
-			<version>${liferayVersion}</version>
+			<version>\${lfr.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -87,8 +87,8 @@
 		</dependency>
 	</dependencies>
 	<properties>
-		<liferay.theme.parent>classic</liferay.theme.parent>
-		<liferay.theme.type>fmt</liferay.theme.type>
-		<liferay.version>6.2.0-RC5</liferay.version>
+		<lfr.theme.parent>classic</lfr.theme.parent>
+		<lfr.theme.type>fmt</lfr.theme.type>
+		<lfr.version>6.2.0-RC5</lfr.version>
 	</properties>
 </project>

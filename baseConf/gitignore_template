@@ -1,5 +1,4 @@
-sql
-liferay-portal-6.2-ce-ga2
+liferay-portal-*
 dependencies
 spring-shell.log
 target
