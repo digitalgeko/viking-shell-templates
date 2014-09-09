@@ -10,7 +10,7 @@
         <company-includes />
         <company-excludes />
     </company-limit>
-     <theme id="${projectName}-theme" name="${projectName}">
+     <theme id="ThemeTestOne-theme" name="ThemeTestOne">
          <template-extension>ftl</template-extension>
          <settings>
              <setting configurable="true" key="show-navigation" value="true" type="checkbox"/>

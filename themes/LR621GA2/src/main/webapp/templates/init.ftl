@@ -50,8 +50,8 @@
 <#assign full_css_path = fullCssPath />
 <#assign full_templates_path = fullTemplatesPath />
 
-<#assign css_main_file = htmlUtil.escape(portalUtil.getStaticResourceURL(request, "\${css_folder}/main.css")) />
-<#assign js_main_file = htmlUtil.escape(portalUtil.getStaticResourceURL(request, "\${javascript_folder}/main.js")) />
+<#assign css_main_file = htmlUtil.escape(portalUtil.getStaticResourceURL(request, "${css_folder}/main.css")) />
+<#assign js_main_file = htmlUtil.escape(portalUtil.getStaticResourceURL(request, "${javascript_folder}/main.js")) />
 
 <#assign company_id = company.getCompanyId() />
 <#assign company_name = company.getName() />
@@ -243,18 +243,18 @@
 
 	<#assign my_places_portlet_url = my_sites_portlet_url />
 
-	\${my_sites_portlet_url.setWindowState("normal")}
-	\${my_sites_portlet_url.setPortletMode("view")}
+	${my_sites_portlet_url.setWindowState("normal")}
+	${my_sites_portlet_url.setPortletMode("view")}
 
-	\${my_sites_portlet_url.setParameter("struts_action", "/my_sites/view")}
-	\${my_sites_portlet_url.setParameter("groupId", "\${page.getGroupId()}")}
-	\${my_sites_portlet_url.setParameter("privateLayout", "false")}
+	${my_sites_portlet_url.setParameter("struts_action", "/my_sites/view")}
+	${my_sites_portlet_url.setParameter("groupId", "${page.getGroupId()}")}
+	${my_sites_portlet_url.setParameter("privateLayout", "false")}
 
 	<#assign site_default_public_url = htmlUtil.escape(my_sites_portlet_url.toString()) />
 
 	<#assign community_default_public_url = site_default_public_url />
 
-	\${my_sites_portlet_url.setParameter("privateLayout", "true")}
+	${my_sites_portlet_url.setParameter("privateLayout", "true")}
 
 	<#assign site_default_private_url = htmlUtil.escape(my_sites_portlet_url.toString()) />
 
@@ -370,13 +370,13 @@
 	<#assign dir_include = "/html" />
 </#if>
 
-<#assign body_bottom_include = "\${dir_include}/common/themes/body_bottom.jsp" />
-<#assign body_top_include = "\${dir_include}/common/themes/body_top.jsp" />
-<#assign bottom_include = "\${dir_include}/common/themes/bottom.jsp" />
+<#assign body_bottom_include = "${dir_include}/common/themes/body_bottom.jsp" />
+<#assign body_top_include = "${dir_include}/common/themes/body_top.jsp" />
+<#assign bottom_include = "${dir_include}/common/themes/bottom.jsp" />
 <#assign bottom_ext_include = bottom_include />
-<#assign content_include = "\${dir_include}\${tilesContent}" />
-<#assign top_head_include = "\${dir_include}/common/themes/top_head.jsp" />
-<#assign top_messages_include = "\${dir_include}/common/themes/top_messages.jsp" />
+<#assign content_include = "${dir_include}${tilesContent}" />
+<#assign top_head_include = "${dir_include}/common/themes/top_head.jsp" />
+<#assign top_messages_include = "${dir_include}/common/themes/top_messages.jsp" />
 
 <#-- ---------- Date ---------- -->
 
@@ -386,4 +386,4 @@
 
 <#-- ---------- Custom init ---------- -->
 
-<#include "\${full_templates_path}/init_custom.ftl" />
+<#include "${full_templates_path}/init_custom.ftl" />
