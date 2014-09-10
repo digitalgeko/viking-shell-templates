@@ -374,7 +374,7 @@
 <#assign body_top_include = "\${dir_include}/common/themes/body_top.jsp" />
 <#assign bottom_include = "\${dir_include}/common/themes/bottom.jsp" />
 <#assign bottom_ext_include = bottom_include />
-<#assign content_include = "\${dir_include}${tilesContent}" />
+<#assign content_include = "\${dir_include}\${tilesContent}" />
 <#assign top_head_include = "\${dir_include}/common/themes/top_head.jsp" />
 <#assign top_messages_include = "\${dir_include}/common/themes/top_messages.jsp" />
 
