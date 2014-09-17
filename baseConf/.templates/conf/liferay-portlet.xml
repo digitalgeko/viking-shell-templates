@@ -22,6 +22,7 @@
             <instanceable>${portletConf.instanceable?:false}</instanceable>
             <header-portlet-css>/css/main.css</header-portlet-css>
             
+            <footer-portlet-javascript>/js/lib/viking.js</footer-portlet-javascript>
             <footer-portlet-javascript>/js/angular/angular.min.js</footer-portlet-javascript>
             <footer-portlet-javascript>/js/angular/init.js</footer-portlet-javascript>
 
