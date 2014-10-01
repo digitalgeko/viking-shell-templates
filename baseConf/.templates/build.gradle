@@ -11,6 +11,7 @@ project.ext {
 
 buildscript {
     repositories {
+    	mavenLocal()
     	mavenCentral()
         maven { url "http://107.170.56.196:8081/artifactory/libs-release-local" }
     }
