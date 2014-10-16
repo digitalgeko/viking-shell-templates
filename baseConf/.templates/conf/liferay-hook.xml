@@ -3,4 +3,8 @@
 
 <hook>
     <portal-properties>portal.properties</portal-properties>
+    <language-properties>content/Language.properties</language-properties>
+    <% languageIds.each { %>
+    	<language-properties>content/Language_${it}.properties</language-properties>
+    <% } %>
 </hook>
