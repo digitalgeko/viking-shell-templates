@@ -47,15 +47,15 @@
   float: left;
   min-width: 160px;
   padding: 5px 0;
-  margin: 2px 0 0; // override default ul
+  margin: 0; // override default ul
   list-style: none;
   background-color: $dropdownBackground;
   border: 1px solid #ccc; // Fallback for IE7-8
   border: 1px solid $dropdownBorder;
   *border-right-width: 2px;
   *border-bottom-width: 2px;
-  @include border-radius(6px);
-  @include box-shadow(0 5px 10px rgba(0,0,0,.2));
+  @include border-radius(2px);
+  @include box-shadow(0 5px 8px rgba(0,0,0,.1));
   -webkit-background-clip: padding-box;
      -moz-background-clip: padding;
           background-clip: padding-box;

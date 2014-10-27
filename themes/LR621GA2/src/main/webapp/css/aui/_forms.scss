@@ -25,14 +25,14 @@ legend {
   margin-bottom: $baseLineHeight;
   font-size: $baseFontSize * 1.5;
   line-height: $baseLineHeight * 2;
-  color: $grayDark;
+  color: $quaternaryColor-dark;
   border: 0;
   border-bottom: 1px solid #e5e5e5;
 
   // Small
   small {
     font-size: $baseLineHeight * .75;
-    color: $grayLight;
+    color: $quaternaryColor-light;
   }
 }
 
@@ -79,12 +79,12 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
   display: inline-block;
-  height: $baseLineHeight;
+  height: $inputHeight;
   padding: 4px 6px;
   margin-bottom: $baseLineHeight / 2;;
   font-size: $baseFontSize;
   line-height: $baseLineHeight;
-  color: $gray;
+  color: $inputFontColor;
   @include border-radius($inputBorderRadius);
   vertical-align: middle;
 }
@@ -162,7 +162,8 @@ input[type="file"] {
 
 // Make select elements obey height by applying a border
 select {
-  width: 220px; // default input width + 10px of padding that doesn't get applied
+  //width: 220px; // default input width + 10px of padding that doesn't get applied
+  width: 206px; // default input width +10 not needed because of box model changes
   border: 1px solid $inputBorder;
   background-color: $inputBackground; // Chrome on Linux and Mobile Safari need background-color
 }
@@ -188,7 +189,7 @@ input[type="checkbox"]:focus {
 // Make uneditable inputs look inactive
 .uneditable-input,
 .uneditable-textarea {
-  color: $grayLight;
+  color: $quaternaryColor-light;
   background-color: darken($inputBackground, 1%);
   border-color: $inputBorder;
   @include box-shadow(inset 0 1px 2px rgba(0,0,0,.025));
@@ -453,17 +454,19 @@ select:focus:invalid {
   .add-on {
     display: inline-block;
     width: auto;
-    height: $baseLineHeight;
-    min-width: 16px;
+    height: $inputHeight;
+    min-width: $inputHeight;
     padding: 4px 5px;
     font-size: $baseFontSize;
     font-weight: normal;
     line-height: $baseLineHeight;
     text-align: center;
-    text-shadow: 0 1px 0 $white;
-    background-color: $grayLighter;
-    border: 1px solid #ccc;
+    // text-shadow: 0 1px 0 $white;
+    background-color: $tertiaryColor-light;
+    color: $primaryColor;
+    // border: 1px solid #ccc;
   }
+
   .add-on,
   .btn,
   .btn-group > .dropdown-toggle {

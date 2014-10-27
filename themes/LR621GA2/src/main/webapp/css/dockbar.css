@@ -25,6 +25,16 @@ $editLayoutPanelWidth: 460px;
 			}
 		}
 
+		.user-notifications-count {
+			padding-top: 0px;
+			padding-bottom: 0px;
+			margin-top: 4px;
+			margin-bottom: 4px;
+			line-height: 21px;
+			background-color: $docBarNotificationsBackground;
+			border-color: $docBarNotificationsBorder;
+		}
+
 		.btn-link {
 			color: #FFF;
 		}
@@ -177,16 +187,19 @@ $editLayoutPanelWidth: 460px;
 				border-width: 0;
 				padding: 0;
 				width: 0;
+
+				.nav.nav-account-controls > li {
+						background-color: $docBarBackground;
+				}
 				
 				.nav {
 					border-bottom-width: 0;
 
 					> li {
-						background-color: $docBarBackground;
-
 						> a {
 							color: #FFF;
 							line-height: 31px;
+							font-size: $baseFontSize;
 
 							&:focus, &:hover {
 								color: #FFF;
@@ -244,18 +257,20 @@ $editLayoutPanelWidth: 460px;
 					padding: 0;
 					position: fixed;
 					right: 5em;
+					top: 0;
 					z-index: 325;
 				}
 
 				.nav-add-controls {
 					background: transparent;
 					position: fixed;
-					top: 10%;
+					top: $navbarHeight;
 					z-index: 350;
 
 					> li {
 						float: none;
-						margin: 10px;
+						margin: 0 10px;
+						padding: 5px 0;
 						position: relative;
 
 						&.toggle-controls a {
