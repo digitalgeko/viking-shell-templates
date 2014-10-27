@@ -89,6 +89,6 @@
 	<properties>
 		<lfr.theme.parent>classic</lfr.theme.parent>
 		<lfr.theme.type>fmt</lfr.theme.type>
-		<lfr.version>6.2.0-RC5</lfr.version>
+		<lfr.version>6.2.1</lfr.version>
 	</properties>
 </project>

@@ -25,10 +25,9 @@
             <% } %>
         </supports>
         
-        <supported-locale>en</supported-locale>
-        <supported-locale>en_US</supported-locale>
-        <supported-locale>nl</supported-locale>
-        <supported-locale>nl_NL</supported-locale>
+        <% languageIds.each { %>
+        	<supported-locale>${it}</supported-locale>
+		<% } %>
         <resource-bundle>content.Language</resource-bundle>
 
 		<portlet-info>

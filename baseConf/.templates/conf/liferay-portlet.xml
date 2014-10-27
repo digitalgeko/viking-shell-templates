@@ -2,19 +2,15 @@
 <!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.2.0//EN" "http://www.liferay.com/dtd/liferay-portlet-app_6_2_0.dtd">
 
 <liferay-portlet-app>
-    <% def vkCtrlPath = 'viking' + File.separator + 'controllers' + File.separator %>
-    <% portlets.each { portlet ->
-        dashedName = portlet.replaceAll(/(\B[A-Z])/, '-$1').toLowerCase() - vkCtrlPath - '.groovy'
-        dashedPortletName = dashedName
-        portletName = portlet - vkCtrlPath - 'Portlet.groovy'
-        portletConf = conf[portletName]
-        %>
+    <% portletMaps.each { portlet ->
+        portletConf = conf[portlet.portletName]
+    %>
         <portlet>
-            <portlet-name>${dashedName}</portlet-name>
+            <portlet-name>${portlet.dashedName}</portlet-name>
             <icon>/icon.png</icon>
             <friendly-url-mapper-class>com.liferay.portal.kernel.portlet.DefaultFriendlyURLMapper</friendly-url-mapper-class>
-            <friendly-url-mapping>${dashedPortletName}</friendly-url-mapping>
-            <friendly-url-routes>urlmappings/${dashedName}-friendly-url-routes.xml</friendly-url-routes>
+            <friendly-url-mapping>${portlet.dashedName}</friendly-url-mapping>
+            <friendly-url-routes>urlmappings/${portlet.dashedName}-friendly-url-routes.xml</friendly-url-routes>
             <% if (portletConf.controlPanel) { %>
                     <control-panel-entry-category>${portletConf.controlPanel.category}</control-panel-entry-category>
                     <control-panel-entry-weight>${portletConf.controlPanel.weight}</control-panel-entry-weight>
@@ -28,6 +24,9 @@
 
             <% javascripts.each { javascript -> %>
                 <footer-portlet-javascript>/js/${javascript}</footer-portlet-javascript>
+            <% } %>
+            <% portletJavascripts[portlet.portletName].each { javascript -> %>
+                <footer-portlet-javascript>/js/${portlet.portletName}Portlet/${javascript}</footer-portlet-javascript>
             <% } %>
         </portlet>
     <% } %>
