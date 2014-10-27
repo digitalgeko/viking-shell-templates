@@ -2,10 +2,8 @@
 // Variables
 // --------------------------------------------------
 
-
 // Global values
 // --------------------------------------------------
-
 
 // Grays
 // -------------------------
@@ -31,48 +29,65 @@ $purple:				#7a43b6 !default;
 
 
 
-$primaryColor:			#ff4f00;
-$primaryColor-light:	#ff7b40;
-$primaryColor-dark:		#f24e04;
+$primaryColor:			#475062;
+$primaryColor-light:	lighten($primaryColor, 10%);
+$primaryColor-dark:		darken($primaryColor, 10%);
 
-$secondaryColor:		#475062;
-$secondaryColor-light:	#757c89;
-$secondaryColor-dark:	#343e4f;
+$secondaryColor:		#ff4f00;
+$secondaryColor-light:	lighten($secondaryColor, 10%);
+$secondaryColor-dark:	darken($secondaryColor, 10%);
 
-$tertiaryColor:			#14cc4f;
-$tertiaryColor-light:	#4fd97b;
-$tertiaryColor-dark:	#0f993b;
+$tertiaryColor:			#b5b5b4;
+$tertiaryColor-light:	lighten($tertiaryColor, 10%);
+$tertiaryColor-dark:	darken($tertiaryColor, 10%);
 
-$fourthColor:			#454544;
-$fourthColor-light:		#747473;
-$fourthColor-dark:		#343433;
+$quaternaryColor:		#454544;
+$quaternaryColor-light:	lighten($quaternaryColor, 10%);	
+$quaternaryColor-dark:	darken($quaternaryColor, 10%);	//main text color
 
-$fifthColor:			#b5b5b4;
-$fifthColor-light:		#c8c8c7;
-$fifthColor-dark:		#888887;
+$quinaryColor:			#7BCAA8;
+$quinaryColor-light:	lighten($quinaryColor, 10%);
+$quinaryColor-dark:		darken($quinaryColor, 10%);
+
+$errorColor:			#ff110d;
+$errorColor-light:		lighten($errorColor, 10%);
+$errorColor-dark:		darken($errorColor, 10%);
+
+$successColor:			$quinaryColor;
+$successColor-light:	$quinaryColor-light;
+$successColor-dark:		$quinaryColor-dark;
 
 
 // Scaffolding
 // -------------------------
-$bodyBackground:        $white !default;
-$textColor:             $grayDark !default;
+$primaryBackground-normal:		#FFFFFF;
+$secondaryBackground-normal:	#e4e4e4;
+
+$softBorder-normal:		#c8c8c7;
+$hardBorder-normal:		#747473;
+
+$default-border-radius: 2px;
+$default-height: 44px; //used for inputs, buttons, menus, etc
+
+$bodyBackground:        $primaryBackground-normal;
+$textColor:             $quaternaryColor-dark;
 
 
 // Links
 // -------------------------
-$linkColor:             #08c !default;
+$linkColor:             #2a5db0;
 $linkColorHover:        darken($linkColor, 15%) !default;
 
 
 // Typography
 // -------------------------
-$sansFontFamily:         "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serifFontFamily:       Georgia, "Times New Roman", Times, serif !default;
 $monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace !default;
 
-$baseFontSize:          14px !default;
-$baseFontFamily:        $sansFontFamily !default;
-$baseLineHeight:        20px !default;
+$baseFontSize:          14px;
+$baseFontFamily:        $sansFontFamily;
+$baseLineHeight:        20px;
 $altFontFamily:         $serifFontFamily !default;
 
 $headingsFontFamily:    inherit !default; // empty to use BS default, $baseFontFamily
@@ -106,24 +121,24 @@ $tableBorder:                       #ddd !default; // table and cell border
 
 // Buttons
 // -------------------------
-$btnBackground:                     $white !default;
-$btnBackgroundHighlight:            darken($white, 10%) !default;
-$btnBorder:                         #ccc !default;
+$btnBackground:                     lighten($tertiaryColor-light, 5%);
+$btnBackgroundHighlight:            $tertiaryColor-light;
+$btnBorder:                         transparent !default;
 
-$btnPrimaryBackground:              $linkColor !default;
-$btnPrimaryBackgroundHighlight:     adjust-hue($btnPrimaryBackground, 20%) !default;
+$btnPrimaryBackground:              lighten($primaryColor-light, 5%);
+$btnPrimaryBackgroundHighlight:     $primaryColor-light;
 
-$btnInfoBackground:                 #5bc0de !default;
-$btnInfoBackgroundHighlight:        #2f96b4 !default;
+$btnInfoBackground:                 lighten($quaternaryColor-light, 5%);
+$btnInfoBackgroundHighlight:        $quaternaryColor-light;
 
-$btnSuccessBackground:              #62c462 !default;
-$btnSuccessBackgroundHighlight:     #51a351 !default;
+$btnSuccessBackground:              lighten($quinaryColor-light, 5%);
+$btnSuccessBackgroundHighlight:     $quinaryColor-light;
 
-$btnWarningBackground:              lighten($orange, 15%) !default;
-$btnWarningBackgroundHighlight:     $orange !default;
+$btnWarningBackground:              lighten($secondaryColor-light, 5%);
+$btnWarningBackgroundHighlight:     $secondaryColor-light;
 
-$btnDangerBackground:               #ee5f5b !default;
-$btnDangerBackgroundHighlight:      #bd362f !default;
+$btnDangerBackground:               lighten($errorColor-light, 5%);
+$btnDangerBackgroundHighlight:      $errorColor-light;
 
 $btnInverseBackground:              #444 !default;
 $btnInverseBackgroundHighlight:     $grayDarker !default;
@@ -131,9 +146,10 @@ $btnInverseBackgroundHighlight:     $grayDarker !default;
 
 // Forms
 // -------------------------
-$inputBackground:               $white !default;
+$inputBackground:               $white;
 $inputFont:						$sansFontFamily !default;
-$inputBorder:                   #ccc !default;
+$inputFontColor:				$primaryColor;
+$inputBorder:                   $tertiaryColor-light;
 $inputBorderRadius:             $baseBorderRadius !default;
 $inputDisabledBackground:       $grayLighter !default;
 $formActionsBackground:         #f5f5f5 !default;
@@ -203,21 +219,24 @@ $wellBackground:                  #f5f5f5 !default;
 $navbarCollapseWidth:             979px !default;
 $navbarCollapseDesktopWidth:      $navbarCollapseWidth + 1;
 
-$navbarHeight:                    40px !default;
-$navbarBackgroundHighlight:       #fff !default;
-$navbarBackground:                darken($navbarBackgroundHighlight, 5%) !default;
-$navbarBorder:                    darken($navbarBackground, 12%) !default;
-$docBarBackground:                #475062;
-$docBarBackgroundhover: 		  #343e4f;
-$portlet-borderless-bar: 		  $secondaryColor-light;
+$navbarHeight:                    $default-height;
+$navbarBackgroundHighlight:       $white;
+$navbarBackground:                $white;
+$navbarBorder:                    $white;
+$docBarBackground:                $quinaryColor-dark;
+$docBarNotificationsBackground:   $primaryColor;
+$docBarNotificationsBorder:   	  $primaryColor-dark;
+$docBarBackgroundhover: 		  $quinaryColor;
+$portlet-borderless-bar: 		  $quinaryColor-dark;
 
 
-$navbarText:                      #777 !default;
-$navbarLinkColor:                 #777 !default;
-$navbarLinkColorHover:            $grayDark !default;
+$navbarText:                      $tertiaryColor;
+$navbarTextSize:                  $baseFontSize * 1.25;
+$navbarLinkColor:                 $tertiaryColor;
+$navbarLinkColorHover:            $primaryColor-light;
 $navbarLinkColorActive:           $gray !default;
 $navbarLinkBackgroundHover:       transparent !default;
-$navbarLinkBackgroundActive:      darken($navbarBackground, 5%) !default;
+$navbarLinkBackgroundActive:      darken($navbarBackground, 2%);
 
 $navbarBrandColor:                $navbarLinkColor !default;
 
@@ -275,21 +294,21 @@ $heroUnitLeadColor:               inherit !default;
 
 // Form states and alerts
 // -------------------------
-$warningText:             #c09853 !default;
-$warningBackground:       #fcf8e3 !default;
-$warningBorder:           darken(adjust-hue($warningBackground, -10), 3%) !default;
+$warningText:             darken($secondaryColor-dark, 15%);
+$warningBackground:       lighten($secondaryColor-light, 15%);
+$warningBorder:           $secondaryColor;
 
-$errorText:               #b94a48 !default;
-$errorBackground:         #f2dede !default;
-$errorBorder:             darken(adjust-hue($errorBackground, -10), 3%) !default;
+$errorText:               darken($errorColor-dark, 15%);
+$errorBackground:         lighten($errorColor-light, 15%);
+$errorBorder:             $errorColor;
 
-$successText:             #468847 !default;
-$successBackground:       #dff0d8 !default;
-$successBorder:           darken(adjust-hue($successBackground, -10), 5%) !default;
+$successText:             darken($successColor-dark, 25%);
+$successBackground:       lighten($successColor-dark, 15%);
+$successBorder:           $successColor;
 
-$infoText:                #3a87ad !default;
-$infoBackground:          #d9edf7 !default;
-$infoBorder:              darken(adjust-hue($infoBackground, -10), 7%) !default;
+$infoText:                darken($primaryColor-dark, 15%);
+$infoBackground:          lighten($primaryColor-light, 15%);
+$infoBorder:              $primaryColor;
 
 
 // Tooltips and popovers

@@ -7,18 +7,23 @@
 // -------------------------
 
 .alert {
-  padding: 8px 35px 8px 14px;
+  padding: 8px 14px 8px 35px;
   margin-bottom: $baseLineHeight;
-  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  // text-shadow: 0 1px 0 rgba(255,255,255,.5);
   background-color: $warningBackground;
   border: 1px solid $warningBorder;
   @include border-radius($baseBorderRadius);
+
 }
 .alert,
 .alert h4 {
   // Specified for the h4 to prevent conflicts of changing $headingsColor
   color: $warningText;
+   &:before {
+    color: $warningText;
+  }
 }
+
 .alert h4 {
   margin: 0;
 }
@@ -39,6 +44,9 @@
   background-color: $successBackground;
   border-color: $successBorder;
   color: $successText;
+  &:before{
+    color: $successText;
+  }
 }
 .alert-success h4 {
   color: $successText;
@@ -48,6 +56,9 @@
   background-color: $errorBackground;
   border-color: $errorBorder;
   color: $errorText;
+  &:before{
+    color: $errorText;
+  }
 }
 .alert-danger h4,
 .alert-error h4 {
@@ -57,6 +68,9 @@
   background-color: $infoBackground;
   border-color: $infoBorder;
   color: $infoText;
+  &:before{
+    color: $infoText;
+  }
 }
 .alert-info h4 {
   color: $infoText;

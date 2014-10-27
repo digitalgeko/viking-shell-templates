@@ -1,10 +1,23 @@
-@import url(http://fonts.googleapis.com/css?family=Arimo:400,700|Montserrat+Alternates:400,700);
+@import "compass";
+@import "mixins";
+@import url(grid.css);
+@import url(styles.css);
+@import url(custom_common.css);
 
+$dockbarGradientEnd: #1273C7;
+$dockbarGradientStart: #118ADE;
+
+$dockbarOpenGradientEnd: #0993DD;
+$dockbarOpenGradientStart: #0EA6F9;
 
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
 	box-sizing: border-box;
 }
+
 *, *:before, *:after {
 	box-sizing: inherit;
 }
+
+
+

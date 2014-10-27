@@ -1,8 +1,8 @@
 $FontAwesomePath: "aui/alloy-font-awesome/font" !default;
-
 @import "aui/alloy-font-awesome/scss/variables";
 @import "aui/alloy-font-awesome/scss/mixins-alloy";
 @import "aui/alloy-font-awesome/scss/path-alloy";
+
 
 .aui {
 	@import "aui_variables";
@@ -27,4 +27,5 @@ $FontAwesomePath: "aui/alloy-font-awesome/font" !default;
 	font-size: $baseFontSize;
 	line-height: $baseLineHeight;
 	margin: 0;
+
 }
