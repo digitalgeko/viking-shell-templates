@@ -15,11 +15,16 @@
                     <control-panel-entry-category>${portletConf.controlPanel.category}</control-panel-entry-category>
                     <control-panel-entry-weight>${portletConf.controlPanel.weight}</control-panel-entry-weight>
             <% } %>
+            <social-activity-interpreter-class>
+                nl.viking.model.liferay.socialactivity.VikingActivityInterpreter
+            </social-activity-interpreter-class>
             <instanceable>${portletConf.instanceable?:false}</instanceable>
             <header-portlet-css>/css/main.css</header-portlet-css>
             
-            <footer-portlet-javascript>/js/lib/viking.js</footer-portlet-javascript>
+            <header-portlet-javascript>/js/lib/lodash.compat.min.js</header-portlet-javascript>
+            <header-portlet-javascript>/js/lib/viking.js</header-portlet-javascript>
             <footer-portlet-javascript>/js/angular/angular.min.js</footer-portlet-javascript>
+            <footer-portlet-javascript>/js/angular/viking-angular.js</footer-portlet-javascript>
             <footer-portlet-javascript>/js/angular/init.js</footer-portlet-javascript>
 
             <% javascripts.each { javascript -> %>
@@ -28,6 +33,7 @@
             <% portletJavascripts[portlet.portletName].each { javascript -> %>
                 <footer-portlet-javascript>/js/${portlet.portletName}Portlet/${javascript}</footer-portlet-javascript>
             <% } %>
+            <add-default-resource>${portletConf.addDefaultResource?:false}</add-default-resource>
         </portlet>
     <% } %>
 

@@ -1,0 +1,1 @@
+<%= request.getAttribute("viking_model_render_output") %>

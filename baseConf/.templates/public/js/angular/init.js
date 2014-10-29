@@ -1,4 +1,4 @@
-${projectName}App = angular.module('${projectName}App', []);
+angular.module('${projectName}App', ["viking.angular"]);
 
 var htmlBody = document.getElementsByTagName("body")[0]
 
