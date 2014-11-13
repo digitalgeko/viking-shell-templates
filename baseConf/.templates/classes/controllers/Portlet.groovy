@@ -5,12 +5,12 @@ import nl.viking.controllers.annotation.*
 
 class ${portletName.capitalize()}Portlet extends Controller {
 
-    @Render
+    @Render(mode="view")
     def view() {
         
     }
 
-    @Render
+    @Render(mode="edit")
     def edit() {
         
     }
