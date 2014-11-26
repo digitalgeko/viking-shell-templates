@@ -11,13 +11,13 @@
             <friendly-url-mapper-class>com.liferay.portal.kernel.portlet.DefaultFriendlyURLMapper</friendly-url-mapper-class>
             <friendly-url-mapping>${portlet.dashedName}</friendly-url-mapping>
             <friendly-url-routes>urlmappings/${portlet.dashedName}-friendly-url-routes.xml</friendly-url-routes>
+            <social-activity-interpreter-class>
+                nl.viking.model.liferay.socialactivity.VikingActivityInterpreter
+            </social-activity-interpreter-class>
             <% if (portletConf.controlPanel) { %>
                     <control-panel-entry-category>${portletConf.controlPanel.category}</control-panel-entry-category>
                     <control-panel-entry-weight>${portletConf.controlPanel.weight}</control-panel-entry-weight>
             <% } %>
-            <social-activity-interpreter-class>
-                nl.viking.model.liferay.socialactivity.VikingActivityInterpreter
-            </social-activity-interpreter-class>
             <instanceable>${portletConf.instanceable?:false}</instanceable>
             <header-portlet-css>/css/main.css</header-portlet-css>
             
