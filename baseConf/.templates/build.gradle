@@ -16,7 +16,7 @@ buildscript {
         maven { url "http://107.170.56.196:8081/artifactory/libs-release-local" }
     }
     dependencies {
-        classpath 'org.vikingportlets:viking-gradle-plugin:0.4.3'
+        classpath 'org.vikingportlets:viking-gradle-plugin:develop'
     }
 }
 
@@ -30,5 +30,5 @@ repositories {
 }
 
 dependencies {
-    compile 'org.vikingportlets:viking-framework:0.2.31'
+    compile 'org.vikingportlets:viking-framework:develop'
 }
