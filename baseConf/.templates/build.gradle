@@ -30,5 +30,5 @@ repositories {
 }
 
 dependencies {
-    compile 'org.vikingportlets:viking-framework:0.3.0'
+    compile 'org.vikingportlets:viking-framework:0.3'
 }
