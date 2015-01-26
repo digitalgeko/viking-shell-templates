@@ -12,7 +12,7 @@
             <friendly-url-mapping>${portlet.dashedName}</friendly-url-mapping>
             <friendly-url-routes>urlmappings/${portlet.dashedName}-friendly-url-routes.xml</friendly-url-routes>
             <social-activity-interpreter-class>
-                nl.viking.model.liferay.socialactivity.VikingActivityInterpreter
+                nl.viking.model.liferay.VikingActivityInterpreter
             </social-activity-interpreter-class>
             <% if (portletConf.controlPanel) { %>
                     <control-panel-entry-category>${portletConf.controlPanel.category}</control-panel-entry-category>
