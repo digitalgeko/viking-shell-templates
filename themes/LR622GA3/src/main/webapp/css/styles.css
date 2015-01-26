@@ -1,0 +1,659 @@
+@import 'compass';
+@import "mixins";
+@import 'aui/variables';
+
+
+
+@mixin clearfix {
+		&:after {
+				clear: both;
+				content: '';
+				display: table;
+		}
+}
+
+
+body {
+		background-color: $primaryBackground-normal;
+		color: $quaternaryColor-dark;
+        margin: 0;
+		padding: 0;
+}
+
+hr {
+		border: 1px solid $softBorder-normal;
+		border-top: 0;
+		color: $softBorder-normal;
+		margin: 0 0 16px;
+}
+
+button.styled,
+input[type='button'].styled,
+input[type="button"].styled {
+		border: 0;
+		color: #fff;
+		cursor: pointer;
+		font-size: 14px;
+		font-weight: 400;
+		height: $default-height;
+		margin: 0;
+		margin-bottom: 16px!important;
+		max-width: 100%;
+		padding-bottom: 0;
+		padding-left: 10px;
+		padding-right: $default-height;
+		padding-top: 0;
+		position: relative;
+		text-align: left;
+		width: 100%;
+
+
+	&:after {
+		content: "\f105";
+		font-family: FontAwesome;
+		position: absolute;
+		right: 7px;
+		top: 7px;
+		line-height: 30px;
+		width: 30px;
+		text-align: center;
+		color: #fff;
+	}
+
+
+}
+.normal-icon {
+		padding-right: $inputHeight!important;
+		position: relative;
+
+	&:after {
+		font-size: 80%;
+		content: "\f105";
+		font-family: FontAwesome;
+		position: absolute;
+		right: 4px;
+		top: 50%;
+		margin-top: -($inputHeight/1.6)/2;
+		line-height: $inputHeight/1.6;
+		width: $inputHeight/1.6;
+		text-align: center;
+		color: #fff;
+
+	}
+
+
+}
+
+
+
+@mixin button-icon(
+		$normalIconColor, $normalIconBg, 
+		$hoverIconColor, $hoverIconBg,
+		$activeIconColor, $activeIconBg, 
+		$iconUnicode:"\F0DA") {
+
+		@extend .normal-icon;
+	
+		&:after {
+				background-color: $normalIconBg;
+				border-radius: 50%;
+				color: $normalIconColor;
+				content: $iconUnicode;
+				transition: background-color 0.2s ease;
+		}
+
+		&:hover, 
+		&.hover {
+				&:after {
+						background-color: $hoverIconBg;
+						color: lighten($hoverIconColor, 10%);
+
+				}
+		}
+		
+		&:active, 
+		&.active {
+				&:after {
+						background-color: $activeIconBg;
+						color: $activeIconColor;
+				}
+		}
+
+}
+
+[class*="vkicon"] {
+	
+	@include  button-icon(
+		white			,$tertiaryColor,
+		$primaryColor	,$tertiaryColor,
+		white			,$tertiaryColor-dark
+	);
+
+	&.btn.btn-primary{
+		@include  button-icon(
+			white				,$primaryColor,
+			$primaryColor-light	,$primaryColor,
+			white	,$primaryColor-dark
+		);
+	}
+	&.btn.btn-warning{
+		@include  button-icon(
+			white			,$secondaryColor,
+			$primaryColor-dark	,$secondaryColor,
+			white 			,$secondaryColor-dark
+		);
+	}
+	&.btn.btn-success{
+		@include  button-icon(
+			white			,$successColor,
+			$primaryColor-dark	,$successColor,
+			white 			,$successColor-dark
+		);
+	}
+	&.btn.btn-danger{
+		@include  button-icon(
+			white			,$errorColor,
+			$primaryColor-dark	,$errorColor,
+			white 			,$errorColor-dark
+		);
+	}
+	&.btn-info{
+		@include  button-icon(
+			white			,$quaternaryColor,
+			$tertiaryColor	,$quaternaryColor,
+			white			,$quaternaryColor-dark
+		);
+	}
+
+	
+
+}
+
+.btn.vkicon-next{
+	&:after{
+		content: "\F0DA"!important;
+	}	
+}
+
+.btn.vkicon-prev{
+	&:after{
+		content: "\F0D9"!important;
+	}	
+}
+
+.btn.vkicon-error,
+.btn.vkicon-cancel{
+	&:after{
+		content: "\F00D"!important;
+	}	
+}
+
+.btn.vkicon-exclamation{
+	&:after{
+		content: "\F12A"!important;
+	}	
+}
+
+
+@mixin button-styles($normalBackground, $normalTextColor, $normalIconColor,  $hoverBackground, $hoverTextColor, $hoverIconColor, $activeBackground, $activeTextColor, $activeIconColor, $iconUnicode) {
+
+		background-color: $normalBackground;
+		background-image: linear-gradient(lighten($normalBackground, 5%), $normalBackground);
+		color: $normalTextColor;
+		transition: background-color 0.2s ease;
+		@include border-radius();
+
+
+		&:after {
+				background-color: $activeBackground;
+				border-radius: 50%;
+				color: $normalIconColor;
+				content: $iconUnicode;
+				transition: background-color 0.2s ease;
+		}
+
+		&:hover, 
+		&.hover {
+				background-color: $hoverBackground;		
+				color: darken($hoverTextColor, 10%);
+
+				&:after {
+						color: $hoverIconColor;
+				}
+		}
+		
+		&:active, 
+		&.active {
+				background-color: $activeBackground;		
+				color: $activeTextColor;	
+
+				&:after {
+						background-color: $normalBackground;
+						color: $activeIconColor;
+				}
+		}
+
+}
+
+.primary-button {
+		@include button-styles(
+			$primaryColor-light, #fff, #fff, 
+			$primaryColor-light, $primaryColor, $primaryColor-light, 
+			$primaryColor, #fff, #fff, 
+			'\f00c');
+}
+
+.secondary-button {
+		@include button-styles($secondaryColor-light, #fff, #fff, $secondaryColor-light, $primaryColor, $primaryColor-light, $secondaryColor, #fff, #fff, '\f105');
+}
+
+.tertiary-button {
+		@include button-styles($tertiaryColor-light, $hardBorder-normal, $hardBorder-normal, $tertiaryColor-light, $primaryColor, $primaryColor-light, $tertiaryColor, $hardBorder-normal, $hardBorder-normal, '\f105');
+}
+
+
+// demo styles
+
+
+#SecondaryBackground,
+#PrimaryBackground {
+		border: 1px solid $softBorder-normal;
+		border-radius: 4px;
+		margin-bottom: 40px;
+		position: relative;
+
+		.block {
+				border-radius: 2px;
+				margin: 4px;
+
+				h5 {
+						line-height: 3em;
+						margin: 0;
+						text-align: center;
+				}
+		}
+}
+
+.images-border {
+		img {
+				border: 1px solid $softBorder-normal;
+				padding: 4px;
+		}
+}
+
+
+
+.primary-background {
+		background-color: $primaryBackground-normal;
+}
+
+.secondary-background {
+		background-color: $secondaryBackground-normal;
+}
+
+#background {
+		margin-top: 40px;
+}
+
+
+/* COLORPICKER 1 EXAMPLE */
+
+
+
+.colorPicker {
+		background-color: rgba(255, 255, 255, .6);
+		border-radius: 10px;
+		border: 2px solid rgba(255, 255, 255, .5);
+		cursor: pointer;
+		display: inline-block;
+		height: 20px;
+		margin-top: 8px;
+		position: relative;
+		width: 20px;
+		z-index: 990;
+	
+		& b:after {
+				color: rgba(10, 10, 10, .5);
+				content: '\f040';
+				display: block;
+				font-family: FontAwesome;
+				font-size: 12px;
+				line-height: 16px;
+				text-align: center;
+		}
+}
+
+
+.alert {
+		background-color: $secondaryColor-light;
+		border: 2px solid $secondaryColor;
+		color: #fff;
+		font-size: 14px;
+		margin-bottom: 16px;
+		padding: 14px 14px 14px 42px;
+		position: relative;
+
+		&.success {
+				background: $quinaryColor-light;
+				border-color: $quinaryColor;
+				color: $secondaryColor;
+
+				&:before {
+						color: $secondaryColor;
+				}
+		}	
+
+		&.error {
+				background: $errorColor-light;
+				border-color: $errorColor;
+		}	
+
+
+		&:before {
+				color: #fff;
+				content: '\f05a';
+				font-family: FontAwesome;
+				font-size: 18px;
+				left: 10px;
+				margin-right: 14px;
+				position: absolute;
+				text-align: center;
+
+		}
+
+}
+
+.s-c-p .s-c-p-sampleP{
+		line-height: 9px;
+		padding-top: 0;
+
+}
+
+.onerow {
+		margin-bottom: 16px;
+}
+
+
+
+
+
+@mixin swatch ($color, $color-light, $color-dark) {
+		@include clearfix;
+
+		.normal, 
+		.light, 
+		.dark {
+				text-align: center;
+				transition: background-color 1s ease;
+				@include border-radius();
+		}
+
+		.normal {
+				background-color: $color;
+				clear: left;
+				float: left;
+				height: $default-height;
+				width: 100%;
+				@include border-radius(4px 4px 0 0 );
+
+				b {
+						background-color: $color;
+				}
+		}
+
+		.light, 
+		.dark {
+				float: left;
+				height: $default-height;
+				width: 50%;
+		}
+
+		.light {
+				background-color: $color-light;
+				@include border-radius(0 0 0 4px);
+				
+				b {
+						background-color: $color-light;
+				}		
+		}
+
+		.dark {
+				background-color: $color-dark;
+				@include border-radius(0 0 4px 0);
+
+				b {
+						background-color: $color-dark;
+				}
+			
+		}
+}
+
+.swatch {
+		// border: 1px solid $softBorder-normal;
+		margin-top: 1.3em!important;
+		// padding: 4px;
+
+		.primaryColor {
+				@include swatch($primaryColor, $primaryColor-light, $primaryColor-dark);
+		}
+
+		.secondaryColor {
+				@include swatch($secondaryColor, $secondaryColor-light, $secondaryColor-dark);
+		}
+
+		.tertiaryColor {
+				@include swatch($tertiaryColor, $tertiaryColor-light, $tertiaryColor-dark);
+		}
+
+		.quaternaryColor {
+				@include swatch($quaternaryColor, $quaternaryColor-light, $quaternaryColor-dark);
+		}
+
+		.quinaryColor {
+				@include swatch($quinaryColor, $quinaryColor-light, $quinaryColor-dark);
+		}
+
+		.errorColor {
+				@include swatch($errorColor, $errorColor-light, $errorColor-dark);
+		}
+
+		.errorColor {
+				@include swatch($errorColor, $errorColor-light, $errorColor-dark);
+		}
+		
+		.primaryBackground{
+				@include swatch($primaryBackground-normal, $primaryBackground-normal, $primaryBackground-normal);	
+		}
+		
+		.secondaryBackground{
+				@include swatch($secondaryBackground-normal, $secondaryBackground-normal, $secondaryBackground-normal);	
+		}
+		
+		.softBorder{
+				@include swatch($softBorder-normal, $softBorder-normal, $softBorder-normal);	
+		}
+		
+		.hardBorder{
+				@include swatch($hardBorder-normal, $hardBorder-normal, $hardBorder-normal);	
+		}
+}
+
+
+
+// .sassvariables{
+// 	position: fixed;
+// 	width: 400px;
+// }
+
+.var-name {
+		font-size: 12px;
+		line-height: 1.8em;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		font-family: monaco;
+
+		span {
+				display: block;
+				border: 1px solid $softBorder-normal;
+				height: $default-height;
+				line-height: $default-height;
+				text-align: center;
+				@include border-radius();
+			
+		}
+}
+
+.showvar{
+		margin-top: 1.3em;
+}
+
+
+
+
+
+/* Code in headings */
+.aui h2 code {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+
+/* Faded out hr */
+hr.soften {
+  height: 1px;
+  margin: 70px 0;
+  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  border: 0;
+}
+
+body > #wrapper {
+	padding-top: 0px;
+}
+
+.viking {
+  text-align: center;
+}
+
+.viking h1 {
+  margin: 30px 0 10px;
+  font-size: 60px;
+  font-weight: 200;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: $primaryColor;
+
+
+	img {
+			margin: 0 0 20px;
+			height: 102px;
+	}
+
+}
+
+.aui .site-name-viking,
+.aui .page-title-viking {
+	margin: 0 0 10px;
+	font-size: 24px;
+	font-weight: 200;
+	line-height: 1;
+	letter-spacing: -1px;
+}
+
+.aui .page-title-viking{
+	font-size: 18px;
+	font-weight: 600;
+	letter-spacing: 0px;
+	margin: 16px 0;
+}
+
+
+.viking .viking-byline {
+	margin-bottom: 40px;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.25;
+	color: $secondaryColor-light;
+}
+
+.viking-main-line{
+	margin: 40px 0;
+
+	p {
+		color: $primaryColor;
+		font-size: 18px;
+		font-weight: 400;
+		padding: 0 0 20px 0;
+	}
+
+} 
+.buttons-demo {
+	.btn {
+		margin-right: 0.5em;
+		margin-bottom: 0.5em;
+	}
+}
+
+.viking-img {
+  display: block;
+  margin: 0 auto 30px;
+  /*max-height: 145px;*/
+}
+
+.top-header-bar {
+	background-image: linear-gradient( lighten($primaryColor, 5%), $primaryColor);
+	border-bottom: 6px solid  $secondaryColor-light;
+	margin-bottom: 20px;
+
+
+}
+
+
+@include respond-to(phone, tablet) {
+	.top-header-bar {
+			margin-left: -20px;
+			margin-right: -20px;
+	}
+}
+
+.aui .navbar.site-navigation {
+	margin-bottom: 30px;
+}
+
+.viking-3-col-home {
+	p {
+		color: $primaryColor-light;
+		font-size: 16px;
+		line-height: 1.5;
+		
+	}
+
+	h2 {
+		color:  $primaryColor;
+		letter-spacing: -1px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	h1 i {
+		color: $secondaryColor-light;
+	
+	}
+
+	.journal-content-article {
+		height: 360px;
+		padding: 20px;  
+		
+		@include single-transition(border-color, .2s, ease-in-out, 0s);
+		
+		cursor: pointer;
+		border: 2px solid white;
+	}
+
+	.journal-content-article:hover {
+		border: 2px solid $primaryColor-light;
+	}
+}

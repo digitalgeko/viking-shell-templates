@@ -1,9 +1,9 @@
 angular.module('${projectName}App', ["viking.angular"]);
 
-var htmlBody = document.getElementsByTagName("body")[0]
-
-if (htmlBody.getAttribute("ng-app") == null) {
-	angular.element(document).ready(function() {
-		angular.bootstrap(document, ['${projectName}App']);
-	});
-};
+angular.element(document).ready(function() {
+	angular.forEach(angular.element(".portlet"), function (portletSection) {
+		if (portletSection.id.match("${projectName}\$")) {
+			angular.bootstrap(portletSection, ['${projectName}App']);	
+		};
+	});	
+});
