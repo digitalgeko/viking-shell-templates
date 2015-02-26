@@ -21,6 +21,7 @@
             <instanceable>${portletConf.instanceable?:false}</instanceable>
             <header-portlet-css>/css/main.css</header-portlet-css>
             
+            <header-portlet-javascript>/js/lib/jquery-1.11.2.min.js</header-portlet-javascript>
             <header-portlet-javascript>/js/lib/lodash.compat.min.js</header-portlet-javascript>
             <header-portlet-javascript>/js/lib/viking.js</header-portlet-javascript>
             <footer-portlet-javascript>/js/angular/angular.min.js</footer-portlet-javascript>
