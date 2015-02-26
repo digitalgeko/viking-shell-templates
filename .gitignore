@@ -1,3 +1,4 @@
 spring-shell.log
 .gradle/
 .gradletasknamecache
+.DS_Store

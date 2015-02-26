@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS `${projectName}`;
 CREATE DATABASE  IF NOT EXISTS `${projectName}` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `${projectName}`;
 -- MySQL dump 10.13  Distrib 5.5.16, for osx10.5 (i386)

@@ -24,7 +24,9 @@
             <header-portlet-javascript>/js/lib/lodash.compat.min.js</header-portlet-javascript>
             <header-portlet-javascript>/js/lib/viking.js</header-portlet-javascript>
             <footer-portlet-javascript>/js/angular/angular.min.js</footer-portlet-javascript>
-            <footer-portlet-javascript>/js/angular/viking-angular.js</footer-portlet-javascript>
+            <footer-portlet-javascript>/js/angular/viking-angular.min.js</footer-portlet-javascript>
+            <footer-portlet-javascript>/js/angular/viking-angular-templates.min.js</footer-portlet-javascript>
+            <footer-portlet-javascript>/js/angular/ng-tags-input.min.js</footer-portlet-javascript>
             <footer-portlet-javascript>/js/angular/init.js</footer-portlet-javascript>
 
             <% javascripts.each { javascript -> %>
